@@ -8,6 +8,11 @@ import {
   numberOfColoredFruits,
   numberOfCategories,
   getFruitsByCategory,
+  getFruitsByColor,
+  getIconsByCategory,
+  getIconsByColor,
+  getCategories,
+  getColors,
 } from "./fruits/utils";
 
 console.log("Welcome to fruit-types-quest-II, please fix the code!");
@@ -27,3 +32,13 @@ console.log(numberOfColoredFruits("color", "yellow", fruits));
 console.log(numberOfCategories("category", "berry", fruits));
 
 console.log(getFruitsByCategory("berry", fruits));
+
+console.log(getFruitsByColor("green", fruits));
+
+console.log(getIconsByCategory("drupe", fruits));
+
+console.log(getIconsByColor("blue", fruits));
+
+console.log(getCategories(fruits));
+
+console.log(getColors(fruits));

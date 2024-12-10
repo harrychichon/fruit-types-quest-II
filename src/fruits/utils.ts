@@ -67,34 +67,83 @@ export const numberOfCategories = (
 
 // använd fruits-arrayen
 // ta emot en kategori och returnera en array av alla frukter som ingår i den kategorin
-export const getFruitsByCategory = (
-  category: Fruit["category"],
-  array: Fruit[]
-) => {
-
-	
+export const getFruitsByCategory = (x: Fruit["category"], array: Fruit[]) => {
   const newArr: Fruit[] = [];
-  const hasCategory = array.forEach((element) => {
-    if(newArr.push(element);
+
+  array.forEach((element) => {
+    if (element.category === x) {
+      newArr.push(element);
+    }
   });
 
-  const result = array.filter((newArr) => [category]);
-  return result;
+  return newArr;
 };
 
 // gör en getFruitsByColor också
-export const getFruitsByColor = (color: string[]) => {};
+export const getFruitsByColor = (x: Fruit["color"], array: Fruit[]) => {
+  const newArr: Fruit[] = [];
 
-export const getIconsByCategory = (category: string[]) => {
-  // använd fruits-arrayen
-  // ta emot en kategori och returnera alla ikoner från alla frukter i den kategorin
+  array.forEach((element) => {
+    if (element.color === x) {
+      newArr.push(element);
+    }
+  });
+  return newArr;
+};
+
+// använd fruits-arrayen
+// ta emot en kategori och returnera alla ikoner från alla frukter i den kategorin
+export const getIconsByCategory = (x: Fruit["category"], array: Fruit[]) => {
+  let allIcons: string = "";
+
+  array.forEach((element) => {
+    if (element.category === x) {
+      allIcons += element.icon;
+    }
+  });
+  return allIcons;
 };
 
 // gör en getIconsByColor också
-export const getIconsByColor = (color: string[]) => {};
+export const getIconsByColor = (x: Fruit["color"], array: Fruit[]) => {
+  const newArr: string[] = [];
+
+  array.forEach((element) => {
+    if (element.color === x) {
+      newArr.push(element.icon);
+    }
+  });
+  return newArr;
+};
 
 // gör en getCategories som returnerar en array av alla kategorier
-export const getCategories = (fruit: string[]) => {};
+export const getCategories = (array: Fruit[]) => {
+  const newArr: string[] = [];
+
+  array.forEach((element) => {
+    let categoryCheck = newArr.includes(element.category);
+
+    if (categoryCheck === false) {
+      newArr.push(element.category);
+    }
+  });
+
+  return newArr;
+};
 
 // gör en getColors som returnerar en array av alla färger
-export const getColors = (fruit: string[]) => {};
+export const getColors = (array: Fruit[]) => {
+  const newArr: string[] = [];
+
+  array.forEach((element) => {
+    let colorCheck = newArr.includes(element.color);
+
+    if (colorCheck === false) {
+      newArr.push(element.color);
+    }
+  });
+  return newArr;
+};
+
+
+
