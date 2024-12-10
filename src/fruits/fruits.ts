@@ -1,4 +1,6 @@
-export const fruits = [
+import { Fruit } from "./types";
+
+export const fruits: Fruit[] = [
 	{
 		name: "grape",
 		icon: "🍇",
@@ -120,3 +122,5 @@ export const fruits = [
 		category: "drupe",
 	},
 ];
+
+
